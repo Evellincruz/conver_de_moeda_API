@@ -1,0 +1,1 @@
+const apikey = '2b1083c5a2151fdf5e5f2844'; const apiURL = `https://v6.exchangerate-api.com/v6/${apikey}/latest/`;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Conversor de Moedas</h1>
+        </div>
+       
+        <div class="select-group">
+            <div class="currency-input">
+                <span id="currencySymbol">$</span> <!-- Símbolo da moeda -->
+                <input type="number" id="amount" placeholder="Valor" required />
+            </div>
+        </div>
+        
+        <br>
+        <div class="select-group">
+            <label for=""> Moeda para inserir:</label>
+            <select id="fromCurrency">
+                <option value="USD"> Dólar (USD)</option>
+                <option value="EUR"> Euro (EUR)</option>
+                <option value="BRL"> Real (BRL)</option>
+            </select>
+        </div>
+ <br><br>
+        <div class="select-group">
+            <label for="">Moeda para converter:</label>
+            <select id="toCurrency">
+                <option value="USD"> Dólar (USD)</option>
+                <option value="EUR"> Euro (EUR)</option>
+                <option value="BRL"> Real (BRL)</option>
+            </select>
+        </div>
+ 
+        <div class="button-group">
+            <button id="convertButton">Converter</button>
+        </div>
+ 
+        <div class="result-group">
+            <h2 id="result"></h2>
+        </div>
+    </div>
+</body>
+</html>
