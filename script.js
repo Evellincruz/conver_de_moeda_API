@@ -31,7 +31,7 @@ async function getExchageRate(fromCurrency, toCurrency){
     if(exchangeRate){
         const convertedValue = valor * exchangeRate;
         const conversao = document.getElementById('conversao');
-        conversao.textContent =`Resultado ${convertedValue.toFixed(2)} ${toCurrency}`;
+        conversao.textContent =`Resultado: ${convertedValue.toFixed(2)} ${toCurrency}`;
     }else{
         alert('Erro de buscar cotação. Tente novamente')
     }

@@ -73,7 +73,7 @@ Com o sistema de API é possivel transmitir o valor desejado pelo indivíduo que
 
 ## 🎨 Resultado
 
-![gif](gifs/gif.gif)
+![gif](gif/giff.gif)
 
 ## 🤝 Contribuições
 Tivemos ajuda do nosso professor Leonardo, para desenvolver está tividade, realizamos aulas, colhemos informações, e utlizamos IA (Para a correção de textos e erros nos códigos) para a realização do projeto.
