@@ -18,3 +18,22 @@ async function getExchageRate(fromCurrency, toCurrency){
         return null;
     }
 }
+
+document.getElementById('currencyForm').addEventListener('submit', async function(event){
+    event.preventDefault();
+ 
+    const valor = parseFloat(document.getElementById('Tamanho').value);
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
+ 
+    const exchangeRate = await getExchageRate(fromCurrency, toCurrency);
+ 
+    if(exchangeRate){
+        const convertedValue = valor * exchangeRate;
+        const conversao = document.getElementById('conversao');
+        conversao.textContent =`Resultado ${convertedValue.toFixed(2)} ${toCurrency}`;
+    }else{
+        alert('Erro de buscar cotação. Tente novamente')
+    }
+ 
+});
