@@ -1,8 +1,8 @@
 const apikey = '2b1083c5a2151fdf5e5f2844'; 
 const apiURL = `https://v6.exchangerate-api.com/v6/${apikey}/latest/`;
-
-// Função para buscar taxa de cambio da API
-
+ 
+// Função para buscar taxa  de cambio da API
+ 
 async function getExchageRate(fromCurrency, toCurrency){
     try{
         const response = await fetch(`${apiURL}${fromCurrency}`);
@@ -18,8 +18,8 @@ async function getExchageRate(fromCurrency, toCurrency){
         return null;
     }
 }
-
-document.getElementById('currencyForm').addEventListener('submit', async function(event){
+ 
+    document.getElementById('currencyForm').addEventListener('submit', async function(event){
     event.preventDefault();
  
     const valor = parseFloat(document.getElementById('Tamanho').value);
@@ -37,3 +37,21 @@ document.getElementById('currencyForm').addEventListener('submit', async functio
     }
  
 });
+ 
+// Atualiza o símbolo da moeda ao selecionar uma nova moeda
+function updateCurrency() {
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const currencySymbol = document.getElementById('currencySymbol');
+   
+    // Define o símbolo da moeda de acordo com a seleção
+    if (fromCurrency === "USD") {
+      currencySymbol.textContent = "$";
+    } else if (fromCurrency === "EUR") {
+      currencySymbol.textContent = "€";
+    } else if (fromCurrency === "BRL") {
+      currencySymbol.textContent = "R$";
+    }
+ 
+    // Atualiza o placeholder
+    document.getElementById('Tamanho').placeholder = "Valor";
+  }

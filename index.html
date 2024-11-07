@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Moedas</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!-- Carrega o JavaScript após o HTML -->
 </head>
+ 
 <body>
     <div class="container">
         <div class="header">
             <h1>Conversor de Moedas</h1>
         </div>
-       
-        <div class="select-group">
-            <div class="currency-input">
-                <span id="currencySymbol">$</span> <!-- Símbolo da moeda -->
-                <input type="number" id="amount" placeholder="Valor" required />
+        <form id="currencyForm">
+            <div class="input-group">
+                <div class="currency-input">
+                    <span id="currencySymbol">$</span>
+                    <input type="text" id="Tamanho" placeholder="Valor" required />
+                </div>
             </div>
-        </div>
-        
-        <br>
-        <div class="select-group">
-            <label for=""> Moeda para inserir:</label>
-            <select id="fromCurrency">
-                <option value="USD"> Dólar (USD)</option>
-                <option value="EUR"> Euro (EUR)</option>
-                <option value="BRL"> Real (BRL)</option>
-            </select>
-        </div>
- <br><br>
-        <div class="select-group">
-            <label for="">Moeda para converter:</label>
-            <select id="toCurrency">
-                <option value="USD"> Dólar (USD)</option>
-                <option value="EUR"> Euro (EUR)</option>
-                <option value="BRL"> Real (BRL)</option>
-            </select>
-        </div>
- 
-        <div class="button-group">
-            <button id="convertButton">Converter</button>
-        </div>
- 
-        <div class="result-group">
-            <h2 id="result"></h2>
-        </div>
+
+            <div class="convert">
+                <h1>Converter de:</h1>
+                <div class="select-group">
+                    <select id="fromCurrency" onchange="updateCurrency()" required>
+                        <option value="USD">Dólar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="BRL">Real (BRL)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="convert">
+                <h1>Converter para:</h1>
+                <div class="select-group">
+                    <select id="toCurrency">
+                        <option value="USD">Dólar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="BRL">Real (BRL)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="convertButton">Converter</button>
+            </div>
+            <div class="button-Reset">
+                <button type="reset" id="ResetButton">Reset</button>
+            </div>
+        </form>
+        <div id="conversão"></div>
     </div>
 </body>
 </html>
